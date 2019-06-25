@@ -5,8 +5,8 @@
 对钓鱼网站识别率有点低  百分之三十左右  求金丹期大能 一起改善下识别率
 ======================================================================
 
-Url monitoring and early warning of the website is based on web content deep learning to identify phishing
-Infrastructure  based on celery + django + scrapy + machine - learning
-Phishing site recognition rate is a little lower than 30
-Wish that golden Dan period can improve the recognition rate together
+	Url monitoring and early warning of the website is based on web content deep learning to identify phishing.
+	Infrastructure  based on celery + django + scrapy + machine - learning.
+	Phishing site recognition rate is a little lower than 30.
+	Wish that golden Dan period can improve the recognition rate together.
 
