@@ -1,0 +1,30 @@
+{% load static %}
+{%  load bootstrap3 %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+     <link rel="stylesheet" href="{% static '/lib/css/bootstrap.min.css' %}">
+</head>
+<body>
+<form action="" method="POST" role="form">
+    {% csrf_token %}
+    {% bootstrap_field form.name layout="horizontal" %}
+    {% bootstrap_field form.address layout="horizontal" %}
+    {% bootstrap_field form.city layout="horizontal" %}
+     <button id="submit_button" class="btn btn-primary" type="submit">{% trans 'Submit' %}</button>
+</form>
+</body>
+
+<script src = "{% static  '/lib/js/jquery-1.11.1.min.js'%}">  </script>
+<script src = "{% static  '/lib/js/datatables/datatables.min.js' %}">  </script>
+<script>
+</script>
+
+</html>
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./lib/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="./lib/css/bootstrap.min.css">
+</head>
+<body>
+    <form action="" method="POST" role="form">
+         {% csrf_token %}
+        <legend>创建合同</legend>
+        <div class="form-group">
+            <label for="">签订日期</label>
+            <input type="text" name = 'sign_date' class="form-control" id="" placeholder="sign_date">
+        </div>
+
+
+
+        <div class="form-group">
+                <label for="">租金</label>
+                <input type="text" class="form-control"  name = 'rent' id="" placeholder="rent">
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+
+</body>
+</html>
+
+
+
+
+
+
+

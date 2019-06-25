@@ -1,0 +1,82 @@
+.user-menu {
+            display: inline-block;
+            float: right;
+            margin-right: 10px;
+            list-style: none;
+            padding: 15px 15px;
+        }
+
+        /* 更改默认css值 */
+        .navbar-header {
+            float: left;
+            width: 100%;
+        }
+
+        /* 下拉框 */
+        .dropdown-menu {
+            left: auto;
+            right: 0;
+            /* float: right; */
+            /* top:0; */
+        }
+
+
+        @media (min-width: 768px) {
+            .sidebar {
+                position: fixed;
+                top: 51px;
+                bottom: 0;
+                left: 0;
+                z-index: 1000;
+                display: block;
+                padding: 20px;
+                overflow-x: hidden;
+                overflow-y: auto;
+                background-color: #f5f5f5;
+                border-right: 1px solid #eee;
+            }
+        }
+
+        .main {
+            border: black 1px;
+            top: 50px;
+
+        }
+
+        .navbar-header {
+            height: 50px;
+
+
+        }
+
+        /* .store_table {
+            margin-top: 80px;
+        } */
+
+        body {
+            color: #5f6468
+        }
+
+        .main {
+
+            padding-left: 15px;
+
+        }
+
+        .page-content {
+            padding: 15px;
+        }
+
+        .main-content {
+
+            border: black solid 1px;
+        }
+
+
+        @media (min-width: 768px) {
+            .main {
+                padding-right: 40px;
+                padding-left: 40px;
+                float: right;
+            }
+        }

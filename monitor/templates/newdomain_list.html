@@ -1,0 +1,536 @@
+{% load static %}
+{% load bootstrap3 %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="Xenon Boostrap Admin Panel" />
+	<meta name="author" content="" />
+
+	<title>Xenon - Responsive Table</title>
+
+	<link rel="stylesheet" href="http://fonts.useso.com/css?family=Arimo:400,700,400italic">
+
+    <link rel="stylesheet" href="{% static 'assets/css/fonts/linecons/css/linecons.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/fonts/fontawesome/css/font-awesome.min.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/bootstrap.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/xenon-core.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/xenon-forms.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/xenon-components.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/xenon-skins.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+    <script src= "{% static 'assets/js/jquery-1.11.1.min.js' %}" ></script>
+
+</head>
+
+<body class="page-body">
+
+	<div class="settings-pane">
+
+		<a href="#" data-toggle="settings-pane" data-animate="true">
+			&times;
+		</a>
+
+		<div class="settings-pane-inner">
+
+			<div class="row">
+
+				<div class="col-md-4">
+
+					<div class="user-info">
+
+						<div class="user-image">
+							<a href="extra-profile.html">
+								<img src="assets/images/user-2.png" class="img-responsive img-circle" />
+							</a>
+						</div>
+
+						<div class="user-details">
+
+							<h3>
+								<a href="extra-profile.html">John Smith</a>
+
+								<!-- Available statuses: is-online, is-idle, is-busy and is-offline -->
+								<span class="user-status is-online"></span>
+							</h3>
+
+							<p class="user-title">Web Developer</p>
+
+							<div class="user-links">
+								<a href="extra-profile.html" class="btn btn-primary">Edit Profile</a>
+								<a href="extra-profile.html" class="btn btn-success">Upgrade</a>
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="col-md-8 link-blocks-env">
+
+					<div class="links-block left-sep">
+						<h4>
+							<span>Notifications</span>
+						</h4>
+
+						<ul class="list-unstyled">
+							<li>
+								<input type="checkbox" class="cbr cbr-primary" checked="checked" id="sp-chk1" />
+								<label for="sp-chk1">Messages</label>
+							</li>
+							<li>
+								<input type="checkbox" class="cbr cbr-primary" checked="checked" id="sp-chk2" />
+								<label for="sp-chk2">Events</label>
+							</li>
+							<li>
+								<input type="checkbox" class="cbr cbr-primary" checked="checked" id="sp-chk3" />
+								<label for="sp-chk3">Updates</label>
+							</li>
+							<li>
+								<input type="checkbox" class="cbr cbr-primary" checked="checked" id="sp-chk4" />
+								<label for="sp-chk4">Server Uptime</label>
+							</li>
+						</ul>
+					</div>
+
+					<div class="links-block left-sep">
+						<h4>
+							<a href="#">
+								<span>Help Desk</span>
+							</a>
+						</h4>
+
+						<ul class="list-unstyled">
+							<li>
+								<a href="#">
+									<i class="fa-angle-right"></i>
+									Support Center
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<i class="fa-angle-right"></i>
+									Submit a Ticket
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<i class="fa-angle-right"></i>
+									Domains Protocol
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<i class="fa-angle-right"></i>
+									Terms of Service
+								</a>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="page-container">
+
+		<div class="sidebar-menu toggle-others fixed">
+
+			<div class="sidebar-menu-inner">
+
+				<header class="logo-env">
+
+					<!-- logo -->
+					<div class="logo">
+						<a href="dashboard-1.html" class="logo-expanded">
+							<img src="assets/images/logo@2x.png" width="80" alt="" />
+						</a>
+
+						<a href="dashboard-1.html" class="logo-collapsed">
+							<img src="assets/images/logo-collapsed@2x.png" width="40" alt="" />
+						</a>
+					</div>
+
+					<!-- This will toggle the mobile menu and will be visible only on mobile devices -->
+					<div class="mobile-menu-toggle visible-xs">
+						<a href="#" data-toggle="user-info-menu">
+							<i class="fa-bell-o"></i>
+							<span class="badge badge-success">7</span>
+						</a>
+
+						<a href="#" data-toggle="mobile-menu">
+							<i class="fa-bars"></i>
+						</a>
+					</div>
+
+					<!-- This will open the popup with user profile settings, you can use for any purpose, just be creative -->
+					<div class="settings-icon">
+						<a href="#" data-toggle="settings-pane" data-animate="true">
+							<i class="linecons-cog"></i>
+						</a>
+					</div>
+
+
+				</header>
+
+
+
+				<ul id="main-menu" class="main-menu">
+					<!-- add class "multiple-expanded" to allow multiple submenus to open -->
+					<!-- class "auto-inherit-active-class" will automatically add "active" class for parent elements who are marked already with class "active" -->
+					<li>
+						<a href="dashboard-1.html">
+							<i class="linecons-cog"></i>
+							<span class="title">总控室</span>
+						</a>
+						<ul>
+							<!-- <li>
+								<a href="dashboard-1.html">
+									<span class="title">Dashboard 1</span>
+								</a>
+							</li> -->
+							<li class="active">
+								<a href="newdomain_list.html">
+									<span class="title">域名</span>
+								</a>
+							</li>
+
+
+						</ul>
+					</li>
+
+
+				</ul>
+
+			</div>
+
+		</div>
+
+		<div class="main-content">
+
+			<!-- User Info, Notifications and Menu Bar -->
+			<nav class="navbar user-info-navbar" role="navigation">
+				<!-- Left links for user info navbar -->
+				<ul class="user-info-menu left-links list-inline list-unstyled">
+
+					<li class="hidden-sm hidden-xs">
+						<a href="#" data-toggle="sidebar">
+							<i class="fa-bars"></i>
+						</a>
+					</li>
+
+					<li class="dropdown hover-line">
+						<a href="#" data-toggle="dropdown">
+							<i class="fa-envelope-o"></i>
+						</a>
+					</li>
+
+				</ul>
+
+				<!-- Right links for user info navbar -->
+				<ul class="user-info-menu right-links list-inline list-unstyled">
+
+					<li class="search-form">
+						<!-- You can add "always-visible" to show make the search input visible -->
+
+						<form method="get" action="extra-search.html">
+							<input type="text" name="s" class="form-control search-field"
+								placeholder="Type to search..." />
+
+							<button type="submit" class="btn btn-link">
+								<i class="linecons-search"></i>
+							</button>
+						</form>
+
+					</li>
+
+					<li class="dropdown user-profile">
+						<a href="#" data-toggle="dropdown">
+							<img src="assets/images/user-4.png" alt="user-image"
+								class="img-circle img-inline userpic-32" width="28" />
+							<span>
+								Arlind Nushi
+								<i class="fa-angle-down"></i>
+							</span>
+						</a>
+
+						<ul class="dropdown-menu user-profile-menu list-unstyled">
+							<li>
+								<a href="#edit-profile">
+									<i class="fa-edit"></i>
+									New Post
+								</a>
+							</li>
+							<li>
+								<a href="#settings">
+									<i class="fa-wrench"></i>
+									Settings
+								</a>
+							</li>
+							<li>
+								<a href="#profile">
+									<i class="fa-user"></i>
+									Profile
+								</a>
+							</li>
+							<li>
+								<a href="#help">
+									<i class="fa-info"></i>
+									Help
+								</a>
+							</li>
+							<li class="last">
+								<a href="extra-lockscreen.html">
+									<i class="fa-lock"></i>
+									Logout
+								</a>
+							</li>
+						</ul>
+					</li>
+
+					<li>
+						<a href="#" data-toggle="chat">
+							<i class="fa-comments-o"></i>
+						</a>
+					</li>
+
+				</ul>
+			</nav>
+			<div class="page-title">
+				<div class="title-env">
+					<h3 class="title"> 域名列表 </h3>
+					<!-- <p class="description">An example of responsive table with fixed header</p> -->
+				</div>
+
+				<div class="breadcrumb-env">
+
+					<ol class="breadcrumb bc-1">
+						<li>
+							<a href="dashboard-1.html"><i class="fa-home"></i>Home</a>
+						</li>
+						<li>
+
+							<a href="tables-basic.html">域名</a>
+						</li>
+						<li class="active">
+
+							<strong>域名列表</strong>
+						</li>
+					</ol>
+
+				</div>
+
+			</div>
+
+
+			<!-- Responsive Table -->
+			<div class="row">
+				<div class="col-md-12">
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<!-- <h3 class="panel-title">Adjustable Responsive Table</h3> -->
+
+							<div class="panel-options">
+								<a href="#">
+									<i class="linecons-cog"></i>
+								</a>
+
+								<a href="#" data-toggle="panel">
+									<span class="collapse-icon">&ndash;</span>
+									<span class="expand-icon">+</span>
+								</a>
+
+								<a href="#" data-toggle="reload">
+									<i class="fa-rotate-right"></i>
+								</a>
+
+								<a href="#" data-toggle="remove">
+									&times;
+								</a>
+							</div>
+						</div>
+						<div class="panel-body">
+
+							<div class="table-responsive" data-pattern="priority-columns"
+								data-focus-btn-icon="fa-asterisk" data-sticky-table-header="false"
+								data-add-display-all-btn="false" data-add-focus-btn="true">
+
+{#                                <div class="btn-toolbar"><div class="btn-group focus-btn-group"><button class="btn btn-default"><span class="fa-asterisk"></span> Focus</button></div><div class="btn-group dropdown-btn-group pull-right"><button class="btn btn-default">Display all</button><button class="btn btn-default dropdown-toggle" data-toggle="dropdown">Display <span class="caret"></span></button><ul class="dropdown-menu"><li class="checkbox-row"><div class="cbr-replaced cbr-checked"><div class="cbr-input"><input type="checkbox" name="toggle-issuetable-col-2" id="toggle-issuetable-col-2" value="issuetable-col-2" class="cbr cbr-done"></div><div class="cbr-state"><span></span></div></div> <label for="toggle-issuetable-col-2">url</label></li><li class="checkbox-row"><div class="cbr-replaced cbr-checked"><div class="cbr-input"><input type="checkbox" name="toggle-issuetable-col-3" id="toggle-issuetable-col-3" value="issuetable-col-3" class="cbr cbr-done"></div><div class="cbr-state"><span></span></div></div> <label for="toggle-issuetable-col-3">note</label></li><li class="checkbox-row"><div class="cbr-replaced cbr-checked"><div class="cbr-input"><input type="checkbox" name="toggle-issuetable-col-4" id="toggle-issuetable-col-4" value="issuetable-col-4" class="cbr cbr-done"></div><div class="cbr-state"><span></span></div></div> <label for="toggle-issuetable-col-4">status</label></li></ul></div></div>#}
+
+								<table cellspacing="0" class="table table-small-font table-bordered table-striped"
+									id="issuetable">
+									<thead>
+										<tr>
+                                            <th></th>
+											<th>name</th>
+											<th data-priority="1">url</th>
+											<th data-priority="3">note</th>
+											<th data-priority="1">status</th>
+{#											<th data-priority="3">Prev Close</th>#}
+{#											<th data-priority="3">Open</th>#}
+{#											<th data-priority="6">Bid</th>#}
+										</tr>
+									</thead>
+									<tbody>
+{#										<tr>#}
+{#											<th>YHOO <span class="co-name">Yahoo! Inc.</span></th>#}
+{#											<td>15.81</td>#}
+{#											<td>12:25PM</td>#}
+{#											<td>0.11 (0.67%)</td>#}
+{#											<td>15.70</td>#}
+{#											<td>15.94</td>#}
+{#											<td>15.79 x 6100</td>#}
+{#										</tr>#}
+									</tbody>
+								</table>
+
+							</div>
+
+							<script type="text/javascript">
+								// This JavaScript Will Replace Checkboxes in dropdown toggles
+								jQuery(document).ready(function ($) {
+									setTimeout(function () {
+										$(".checkbox-row input").addClass('cbr');
+										cbr_replace();
+									}, 0);
+								});
+							</script>
+
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<!-- Main Footer -->
+			<!-- Choose between footer styles: "footer-type-1" or "footer-type-2" -->
+			<!-- Add class "sticky" to  always stick the footer to the end of page (if page contents is small) -->
+			<!-- Or class "fixed" to  always fix the footer to the end of page -->
+			<footer class="main-footer sticky footer-type-1">
+
+				<div class="footer-inner">
+
+					<!-- Add your copyright text here -->
+					<div class="footer-text">
+						&copy; 2014
+						<strong>Xenon</strong>
+						More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">极光无限</a> -
+						Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">启明星辰</a>
+					</div>
+
+
+					<!-- Go to Top Link, just add rel="go-top" to any link to add this functionality -->
+					<div class="go-up">
+
+						<a href="#" rel="go-top">
+							<i class="fa-angle-up"></i>
+						</a>
+
+					</div>
+
+				</div>
+
+			</footer>
+		</div>
+
+
+
+	</div>
+
+
+
+
+	
+
+
+
+	<!-- Bottom Scripts -->
+
+    <script src="{%static  'assets/js/bootstrap.min.js' %}"></script>
+	<script src="{%static  'assets/js/TweenMax.min.js' %}"></script>
+	<script src="{%static  'assets/js/resizeable.js' %}"></script>
+	<script src="{%static  'assets/js/joinable.js' %}"></script>
+	<script src="{%static  'assets/js/xenon-api.js' %}"></script>
+	<script src="{%static  'assets/js/xenon-toggles.js' %}"></script>
+
+
+	<!-- Imported scripts on this page -->
+	<script src="{%static  'assets/js/rwd-table/js/rwd-table.min.js' %}"></script>
+
+
+	<!-- JavaScripts initializations and stuff -->
+	<script src="{%static  'assets/js/xenon-custom.js' %}"></script>
+    <script src="{%static  'assets/js/datatables/dataTables.bootstrap.js' %}" >  </script>
+
+    <script  src="{%static  'assets/js/datatables/datatables.min.js' %}" >  </script>
+
+
+
+
+</body>
+
+    <script>
+     $('#issuetable').DataTable({
+        ajax: {
+            url: '{% url "api-monitor:api-domainlist" %}',
+            dataSrc: ''
+        },
+
+
+        columns: [
+
+            { //复选框单元格
+                className: "td-checkbox",
+                orderable: false,
+                width: "30px",
+                data: null,
+                render: function (data, type, row, meta) {
+                    return '<input type="checkbox" class="iCheck">';
+                }},
+
+            {
+                data: "name"
+            },
+            {
+                data: "url"
+            },
+            {
+                data: "note"
+            },
+
+            {
+                data: "status"
+            }
+        ],
+
+
+
+    })
+
+</script>
+
+{#todo 支持选中查询 #}
+<script>
+
+
+
+
+
+
+</script>
+
+
+
+</html>

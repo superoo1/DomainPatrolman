@@ -1,0 +1,183 @@
+{% extends "base.html" %}
+{% block content %}
+            <div class="col-sm-9 col-lg-10 main">
+                <h3> 商铺详情 </h3>
+                <div class="row">
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"> 合同情况</h3>
+                            </div>
+                            <div class="panel-body">
+                                <form role="form" class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="field-1">店名</label>
+                                        <div class="col-sm-10">
+                                            <p class="form-control-static"  >  {{ contract.effect_date }}  </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="field-1">地址</label>
+                                        <div class="col-sm-10">
+                                            <p class="form-control-static"  >  {{ contract.amount }}  </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="field-1">城市</label>
+                                        <div class="col-sm-10">
+                                           <p class="form-control-static" >{{contract.rent }}</p>
+                                        </div>
+                                    </div>
+
+<!--                                    <div class="form-group">-->
+<!--                                        <label class="col-sm-2 control-label">Select list</label>-->
+<!--                                        <div class="col-sm-10">-->
+<!--                                            <select class="form-control">-->
+<!--                                                <option>Option 1</option>-->
+<!--                                                <option>Option 2</option>-->
+<!--                                                <option>Option 3</option>-->
+<!--                                                <option>Option 4</option>-->
+<!--                                                <option>Option 5</option>-->
+<!--                                            </select>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+                                    <div class="form-group-separator"></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-8">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"> 商铺详情</h3>
+                            </div>
+                            <div class="panel-body">
+                                <form role="form" class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="field-1">店名</label>
+                                        <div class="col-sm-10">
+                                            <p class="form-control-static"  >  {{ store.name }}  </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="field-1">地址</label>
+                                        <div class="col-sm-10">
+                                            <p class="form-control-static"  >  {{ store.address }}  </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="field-1">城市</label>
+                                        <div class="col-sm-10">
+                                           <p class="form-control-static" >{{ store.city }}</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Select list</label>
+                                        <div class="col-sm-10">
+                                            <select class="form-control">
+                                                <option>Option 1</option>
+                                                <option>Option 2</option>
+                                                <option>Option 3</option>
+                                                <option>Option 4</option>
+                                                <option>Option 5</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group-separator"></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">租金情况</h3>
+                        </div>
+                        <div class="panel-body">
+
+                            <div id = "rentlinechart"   style="height:400px"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    </div>
+</body>
+
+
+
+
+{% endblock %}
+
+{% block custom_footer %}
+
+{% endblock %}
+
+{% block customer_js %}
+<script type="text/javascript">
+
+     var xvals = [];
+     var yvals = [];
+    $.ajax({
+        {#url: "{% url 'api-business:api-rentbills' %}",#}
+        type: "GET",
+        data: {
+            contracId: "{{ contract.id}}"
+        },
+
+        dataType: "json",
+
+        success: function (data) {
+            console.log('-----------------')
+            console.log(data)
+
+
+           for(var i=0;i<data.length;i++){
+                       xvals.push(data[i].real_date);
+                       yvals.push(data[i].rent_amount)//挨个取出类别并填入类别数组
+                     }
+            console.log(xvals);
+            console.log(yvals);
+
+
+
+        }
+
+    })
+
+
+
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('rentlinechart'));
+    // 指定图表的配置项和数据
+    var option = {
+        xAxis: {
+              type : 'category',
+            data: ["2019-05-01", "2019-06-07", "2019-08-09"]
+        },
+        yAxis: {
+            type: 'value'
+        },
+        series: [{
+            data: ["500.00", "600.00", "1000.00"],
+            type: 'line'
+        }]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+
+
+
+
+{% endblock %}
